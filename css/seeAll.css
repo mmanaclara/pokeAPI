@@ -1,0 +1,61 @@
+.seeAll .wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.seeAll .wrapper header {
+  margin-block: 4rem;
+  display: flex;
+  gap: 0.8rem;
+}
+.seeAll .wrapper header .categoryButton {
+  border: 1px solid var(--grey-250);
+  border-radius: 8px;
+  padding: 1.2rem 5.4rem;
+  color: var(--grey-250);
+  background: transparent;
+  font-size: 1.4rem;
+}
+
+.pokeCard {
+  width: min(116.4rem, 100%);
+  background: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: left;
+  gap: 2.4rem;
+}
+
+.pokemon {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.pokemon img {
+  text-align: center;
+}
+.pokemon button {
+  width: 15rem;
+}
+.pokemon .pokeImg {
+  align-self: center;
+  max-width: 10rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.pokemon .pokeImg img {
+  width: 100%;
+}
+.pokemon .pokeImg button {
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: -20%;
+  left: 30%;
+  color: var(--grey-250);
+}/*# sourceMappingURL=seeAll.css.map */

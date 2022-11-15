@@ -1,0 +1,30 @@
+.home .wrapper {
+    flex-direction: column;
+
+    span {
+        color: var(--grey-300);
+        font-size: 1.4rem;
+        display: block;
+        width: 36.6rem;
+        margin-block: 0.9rem 3.9rem;
+        text-align: center;
+      }
+
+      button {
+        background: transparent;
+        border: 1px solid var(--grey-300);
+        border-radius: 8px;
+        color: var(--grey-300);
+        font-weight: 500;
+        font-size: 1.4rem;
+        padding: 1.25rem 1.66rem;
+        transition: all 0.2s;
+
+        &:hover {
+            background: var(--grey-300);
+            color: var(--white);
+          }
+      }
+  }
+
+

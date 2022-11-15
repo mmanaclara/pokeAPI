@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/seeAll.css" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+      defer
+    ></script>
+    <script src="seeAll.js" defer></script>
+
+    <title>PokéChallenge</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="wrapper">
+        <a href="/">
+          <img src="./assets/pokemon-bw-logo.png" alt="" />
+        </a>
+
+        <nav>
+          <ul>
+            <li>
+              <a href="/">Favoritos</a>
+              <a href="search.html">Procurar</a>
+              <a class="active" href="seeAll.html">Ver todos</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="seeAll">
+      <div class="wrapper">
+        <header>
+            <button type="button" class="categoryButton" onclick="window.location.reload()">
+                <span>Todos</span>
+            </button>
+            <button type="button" class="categoryButton">
+                <span class="categoryTitle">Fire</span>
+            </button>
+            <button type="button" class="categoryButton">
+                <span class="categoryTitle">Electric</span>
+            </button>
+            <button type="button" class="categoryButton">
+                <span class="categoryTitle">Water</span>
+            </button>
+          </header>
+
+          <div class="pokeCard"></div>
+      </div>
+    </main>
+  </body>
+</html>

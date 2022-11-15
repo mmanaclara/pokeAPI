@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+
+    <title>PokéChallenge</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="wrapper">
+            <a href="/">
+                <img src="./assets/pokemon-bw-logo.png" alt="">
+            </a>
+
+            <nav>
+                <ul>
+                    <li>
+                        <a class="active" href="/">Favoritos</a>
+                        <a href="search.html">Procurar</a>
+                        <a href="seeAll.html">Ver todos</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="home">
+        <div class="wrapper">
+            <img src="./assets/Astronaut-pana.png" class="bg-image" alt="Astronauta no espaço brincando com a lua e as estrelas">
+            <h3>Está meio vazio por aqui!</h3>
+            <span>Procure por pokémons para adicioná-los aos seus favoritos.</span>
+            <button type="button" onclick="goToSearchPage()">Procurar pokémons</button>
+        </div>    
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

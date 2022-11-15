@@ -1,0 +1,62 @@
+.search .wrapper {
+    flex-direction: column;
+    margin-top: 2.9rem;
+    width: min(76.5rem, 100%);
+
+    #searchWrapper {
+        border: 1px solid var(--grey-200);
+        border-radius: 8px;
+        background: var(--white);
+        width: 76.5rem;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.86rem 2.66rem;
+
+        input {
+            border: none;
+            width: 95%;
+            background: transparent;
+            font-family: 'Poppins', sans-serif;
+            color: black;
+
+            &:focus {
+                outline: none;
+                border: none;
+            }
+        }
+
+        button {
+            background: transparent;
+            line-height: 0;
+            border: none; 
+        }
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 2px var(--primary);
+    }
+}
+
+.bg-image img {
+    opacity: 0.05;
+    margin-top: 15rem;
+}
+
+.astronaut-wrapper {
+    display: none;
+
+    h3 {
+        text-align: center;
+    }
+}
+
+.astronaut-wrapper.show{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
