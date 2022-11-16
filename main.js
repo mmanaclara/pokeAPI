@@ -3,14 +3,11 @@ const pokeName = document.querySelector("#pokeName");
 const pokeID = document.querySelector("#pokeID");
 const pokePic = document.querySelector("#pokePic");
 const bgImg = document.querySelector(".bg-image");
-const typeOfPoke = document.querySelector(".typeOfPoke")
+const typeOfPoke = document.querySelector(".typeOfPoke");
 
 const formSubmit = document.querySelector("#searchWrapper");
 const searchInput = document.querySelector("#inputSearch");
-
-function goToSearchPage() {
-  window.location.href = "search.html";
-}
+let newData = [];
 
 const colors = {
   normal: "#A8A878",
@@ -37,36 +34,35 @@ const colors = {
 
 async function getPoke(pokemon) {
   const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
-  const APIResponse = await axios
+  await axios
     .get(url)
     .then((response) => {
       const data = response.data;
+      // newData =[...response.data];
 
-      saveFavoritePoke(
-        JSON.stringify({
-          name: data.name,
-          id: data.id,
-          img: data.sprites.front_default,
-        })
-      );
+      // saveFavoritePoke(
+
+      // );
+      // console.log(newData);
+
+      saveNewPoke(JSON.stringify(data));
 
       pokeName.innerHTML = data.name;
       pokeID.innerHTML = data.id;
       pokePic.src = data.sprites.front_default;
-      typeOfPoke.innerHTML = data.types.map(el => el.type.name)[0]
+      typeOfPoke.innerHTML = data.types.map((el) => el.type.name)[0];
 
-      if(data) {
+      if (data) {
         pokeCard.classList.add("show");
-        bgImg.classList.add("hide")
+        bgImg.classList.add("hide");
       } else {
         pokeCard.classList.remove("show");
-        bgImg.classList.remove("hide")
+        bgImg.classList.remove("hide");
       }
-      
     })
     .catch((error) => console.log(error.message));
 
-  return pokemon;
+  // return pokemon;
 }
 
 formSubmit.addEventListener("submit", (event) => {
@@ -75,12 +71,19 @@ formSubmit.addEventListener("submit", (event) => {
   searchInput.value = "";
 });
 
-function saveFavoritePoke(pokemon) {
-  window.localStorage.setItem("pokemons", pokemon);
-  console.log(JSON.stringify(searchInput.value));
+function saveNewPoke(pokemon) {
+  window.localStorage.setItem("currentPoke", pokemon);
 }
 
-const localStorageData = localStorage.getItem("pokemons")
-console.log(JSON.parse(localStorageData))
+const listPoke = [];
 
+function saveFavoritePoke() {
+  const currentPoke = window.localStorage.getItem("currentPoke");
+
+  const parsePoke = JSON.parse(currentPoke);
+
+  listPoke.push(parsePoke);
+
+  window.localStorage.setItem("pokeList", JSON.stringify(listPoke));
+}
 
