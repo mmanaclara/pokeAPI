@@ -16,5 +16,5 @@ Projeto desenvolvido com HTML, CSS e JavaScript para o processo seletivo da Nova
 ## 🚧 Requisitos
 
 ✔ Filtrar;
-❌ Categorizar;
+✔ Categorizar;
 ❌ Favoritar.

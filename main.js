@@ -61,8 +61,6 @@ async function getPoke(pokemon) {
       }
     })
     .catch((error) => console.log(error.message));
-
-  // return pokemon;
 }
 
 formSubmit.addEventListener("submit", (event) => {

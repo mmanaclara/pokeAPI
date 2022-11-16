@@ -7,7 +7,7 @@
     display: flex;
     gap: 0.8rem;
 
-    .categoryButton {
+    .button-value {
       border: 1px solid var(--grey-250);
       border-radius: 8px;
       padding: 1.2rem 5.4rem;
@@ -16,6 +16,11 @@
       font-size: 1.4rem;
     }
   }
+}
+
+.active {
+  background: #FFCB05;
+  color: var(--grey-500);
 }
 
 .pokeCard {
@@ -68,4 +73,8 @@
       color: var(--grey-250);
     }
   }
+}
+
+.hide {
+  display: none;
 }

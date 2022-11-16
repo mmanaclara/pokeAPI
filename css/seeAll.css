@@ -7,13 +7,18 @@
   display: flex;
   gap: 0.8rem;
 }
-.seeAll .wrapper header .categoryButton {
+.seeAll .wrapper header .button-value {
   border: 1px solid var(--grey-250);
   border-radius: 8px;
   padding: 1.2rem 5.4rem;
   color: var(--grey-250);
   background: transparent;
   font-size: 1.4rem;
+}
+
+.active {
+  background: #FFCB05;
+  color: var(--grey-500);
 }
 
 .pokeCard {
@@ -58,4 +63,8 @@
   top: -20%;
   left: 30%;
   color: var(--grey-250);
+}
+
+.hide {
+  display: none;
 }/*# sourceMappingURL=seeAll.css.map */

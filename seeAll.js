@@ -3,23 +3,23 @@ const pokeCount = 150;
 const categoryTtle = document.querySelector(".categoryTitle");
 const allCategoryPokes = document.querySelectorAll(".all");
 
-for (let i = 0; i < categoryTtle.length; i++) {
-  categoryTtle[i].addEventListener(
-    "click",
-    filterPosts.bind(this, categoryTtle[i])
-  );
-}
+// for (let i = 0; i < categoryTtle.length; i++) {
+//   categoryTtle[i].addEventListener(
+//     "click",
+//     filterPosts.bind(this, categoryTtle[i])
+//   );
+// }
 
-function filterPosts(item) {
-  changeActivePosition(item);
-  for (let i = 0; i < allCategoryPokes.length; i++) {
-    if (allCategoryPokes[i].classList.contains(item.attributes.id)) {
-      allCategoryPokes[i].style.display = "block";
-    } else {
-      allCategoryPokes[i].style.display = "none";
-    }
-  }
-}
+// function filterPosts(item) {
+//   changeActivePosition(item);
+//   for (let i = 0; i < allCategoryPokes.length; i++) {
+//     if (allCategoryPokes[i].classList.contains(item.attributes.id)) {
+//       allCategoryPokes[i].style.display = "block";
+//     } else {
+//       allCategoryPokes[i].style.display = "none";
+//     }
+//   }
+// }
 
 const colors = {
   normal: "#A8A878",
@@ -67,8 +67,11 @@ async function getPoke(pokemon) {
 fetchPokes();
 
 function createPokeCard(data, pokeTypes) {
+  const typeOfPokemon = data.types.map((el) => el.type.name)[0]
+
   const pokeElement = document.createElement("div");
-  pokeElement.classList.add("pokemon");
+  pokeElement.classList.add("pokemon", typeOfPokemon);
+  console.log(typeOfPokemon)
 
   const name = data.name[0].toUpperCase() + data.name.slice(1);
   const id = data.id;
@@ -91,7 +94,7 @@ function createPokeCard(data, pokeTypes) {
             <a class="colorType all" href="/" style="background: ${colorType}">${type[0]}</a>
         </div>
 
-        <button>
+        <button class="addButton">
             Ver detalhes
         </button>
     `;
@@ -99,6 +102,36 @@ function createPokeCard(data, pokeTypes) {
   pokeElement.innerHTML = pokeInnerHTML;
 
   pokeCard.appendChild(pokeElement);
-
 }
 
+function filterPoke(value){
+  let buttons = document.querySelectorAll(".button-value");
+  console.log(buttons)
+
+  buttons.forEach((button) => {
+    if (value.toUpperCase() == button.innerText.toUpperCase()) {
+      button.classList.add("active");
+    } else {
+      button.classList.remove("active");
+    }
+  });
+
+  let elements = document.querySelectorAll(".pokemon");
+  elements.forEach((element) => {
+    //display all cards on 'all' button click
+    if (value == "all") {
+      element.classList.remove("hide");
+
+    } else {
+      //Check if element contains category class
+      if (element.classList.contains(value)) {
+        console.log(value)
+        //display element based on category
+        element.classList.remove("hide");
+      } else {
+        //hide other elements
+        element.classList.add("hide");
+      }
+    }
+  });
+}
