@@ -3,24 +3,6 @@ const pokeCount = 150;
 const categoryTtle = document.querySelector(".categoryTitle");
 const allCategoryPokes = document.querySelectorAll(".all");
 
-// for (let i = 0; i < categoryTtle.length; i++) {
-//   categoryTtle[i].addEventListener(
-//     "click",
-//     filterPosts.bind(this, categoryTtle[i])
-//   );
-// }
-
-// function filterPosts(item) {
-//   changeActivePosition(item);
-//   for (let i = 0; i < allCategoryPokes.length; i++) {
-//     if (allCategoryPokes[i].classList.contains(item.attributes.id)) {
-//       allCategoryPokes[i].style.display = "block";
-//     } else {
-//       allCategoryPokes[i].style.display = "none";
-//     }
-//   }
-// }
-
 const colors = {
   normal: "#A8A878",
   fighting: "#C03028",
@@ -67,13 +49,13 @@ async function getPoke(pokemon) {
 fetchPokes();
 
 function createPokeCard(data, pokeTypes) {
-  const typeOfPokemon = data.types.map((el) => el.type.name)[0]
+  const typeOfPokemon = data.types.map((el) => el.type.name)
 
   const pokeElement = document.createElement("div");
   pokeElement.classList.add("pokemon", typeOfPokemon);
-  console.log(typeOfPokemon)
 
   const name = data.name[0].toUpperCase() + data.name.slice(1);
+  console.log(name)
   const id = data.id;
   const pic = data.sprites.front_default;
 
@@ -106,7 +88,6 @@ function createPokeCard(data, pokeTypes) {
 
 function filterPoke(value){
   let buttons = document.querySelectorAll(".button-value");
-  console.log(buttons)
 
   buttons.forEach((button) => {
     if (value.toUpperCase() == button.innerText.toUpperCase()) {
@@ -118,18 +99,13 @@ function filterPoke(value){
 
   let elements = document.querySelectorAll(".pokemon");
   elements.forEach((element) => {
-    //display all cards on 'all' button click
+
     if (value == "all") {
       element.classList.remove("hide");
-
     } else {
-      //Check if element contains category class
       if (element.classList.contains(value)) {
-        console.log(value)
-        //display element based on category
         element.classList.remove("hide");
       } else {
-        //hide other elements
         element.classList.add("hide");
       }
     }

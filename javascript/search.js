@@ -7,7 +7,8 @@ const typeOfPoke = document.querySelector(".typeOfPoke");
 
 const formSubmit = document.querySelector("#searchWrapper");
 const searchInput = document.querySelector("#inputSearch");
-let newData = [];
+const astronaut = document.querySelector('.astronaut-wrapper')
+var saveBtn = document.querySelector('.saveBtn')
 
 const colors = {
   normal: "#A8A878",
@@ -34,33 +35,31 @@ const colors = {
 
 async function getPoke(pokemon) {
   const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
+  
   await axios
     .get(url)
     .then((response) => {
       const data = response.data;
-      // newData =[...response.data];
 
-      // saveFavoritePoke(
+      saveFavoritePoke(data)
 
-      // );
-      // console.log(newData);
-
-      saveNewPoke(JSON.stringify(data));
-
-      pokeName.innerHTML = data.name;
+      pokeName.innerHTML = data.name[0].toUpperCase() + data.name.slice(1);
       pokeID.innerHTML = data.id;
       pokePic.src = data.sprites.front_default;
       typeOfPoke.innerHTML = data.types.map((el) => el.type.name)[0];
 
-      if (data) {
+      if (data) { //Adicionar || pokemon === data.id não funcionou como eu esperava, pois não aparecia a tela de não encontrado
         pokeCard.classList.add("show");
         bgImg.classList.add("hide");
+        astronaut.classList.remove("show")
       } else {
         pokeCard.classList.remove("show");
-        bgImg.classList.remove("hide");
+        astronaut.classList.add("show")
+        bgImg.classList.add("hide");
       }
     })
     .catch((error) => console.log(error.message));
+
 }
 
 formSubmit.addEventListener("submit", (event) => {
@@ -69,19 +68,48 @@ formSubmit.addEventListener("submit", (event) => {
   searchInput.value = "";
 });
 
-function saveNewPoke(pokemon) {
-  window.localStorage.setItem("currentPoke", pokemon);
+function saveFavoritePoke(data) {
+
+  let name = data.name
+  let id = data.id
+  let pic = data.sprites.front_default
+  let type = data.types.map((el) => el.type.name)[0]
+
+  console.log(name)
+  console.log(id)
+  console.log(JSON.stringify(type))
+
+  let pokeInfos = new Array()
+
+  if(localStorage.hasOwnProperty("pokeInfos")) {
+    pokeInfos = JSON.parse(localStorage.getItem("pokeInfos"))
+  }
+
+  pokeInfos.push({ name: name, id: id, pic: pic, type: type })
+
+  localStorage.setItem("pokeInfos", JSON.stringify(pokeInfos))
+
 }
 
-const listPoke = [];
+saveBtn.addEventListener("click", saveFavoritePoke)
 
-function saveFavoritePoke() {
-  const currentPoke = window.localStorage.getItem("currentPoke");
 
-  const parsePoke = JSON.parse(currentPoke);
 
-  listPoke.push(parsePoke);
 
-  window.localStorage.setItem("pokeList", JSON.stringify(listPoke));
-}
+
+
+
+
+
+// function saveFavoritePoke() {
+//   const currentPoke = window.localStorage.getItem("currentPoke");
+
+//   const parsePoke = JSON.parse(currentPoke);
+
+//   pokeStorageList.push(parsePoke);
+
+//   window.localStorage.setItem("pokeList", JSON.stringify(pokeStorageList));
+// }
+
+// saveFavoritePoke()
 

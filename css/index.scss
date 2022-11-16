@@ -1,30 +1,97 @@
-.home .wrapper {
-    flex-direction: column;
+.home .astronaut-wrapper {
+  width: min(116.4rem, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: auto;
+  flex-direction: column;
 
-    span {
-        color: var(--grey-300);
-        font-size: 1.4rem;
-        display: block;
-        width: 36.6rem;
-        margin-block: 0.9rem 3.9rem;
-        text-align: center;
-      }
-
-      button {
-        background: transparent;
-        border: 1px solid var(--grey-300);
-        border-radius: 8px;
-        color: var(--grey-300);
-        font-weight: 500;
-        font-size: 1.4rem;
-        padding: 1.25rem 1.66rem;
-        transition: all 0.2s;
-
-        &:hover {
-            background: var(--grey-300);
-            color: var(--white);
-          }
-      }
+  span {
+    color: var(--grey-300);
+    font-size: 1.4rem;
+    display: block;
+    width: 36.6rem;
+    margin-block: 0.9rem 3.9rem;
+    text-align: center;
   }
+
+  button {
+    background: transparent;
+    border: 1px solid var(--grey-300);
+    border-radius: 8px;
+    color: var(--grey-300);
+    font-weight: 500;
+    font-size: 1.4rem;
+    padding: 1.25rem 1.66rem;
+    transition: all 0.2s;
+
+    &:hover {
+      background: var(--grey-300);
+      color: var(--white);
+    }
+  }
+
+  .hide {
+    display: none;
+  }
+}
+
+.home .astronaut-wrapper.hide {
+  display: none;
+}
+
+.pokeCard {
+  width: min(116.4rem, 100%);
+  background: transparent;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+  flex-direction: column;
+}
+
+.pokemon {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 1.2rem;
+  width: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  img {
+    text-align: center;
+  }
+
+  button {
+    width: 15rem;
+  }
+
+  .pokeImg {
+    align-self: center;
+    max-width: 10rem;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+    }
+
+    button {
+      background: transparent;
+      border: none;
+      position: absolute;
+      top: -20%;
+      left: 30%;
+      color: var(--grey-250);
+    }
+  }
+}
 
 

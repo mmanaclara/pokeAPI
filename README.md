@@ -15,6 +15,10 @@ Projeto desenvolvido com HTML, CSS e JavaScript para o processo seletivo da Nova
 
 ## 🚧 Requisitos
 
-✔ Filtrar;
-✔ Categorizar;
-❌ Favoritar.
+✔ Filtrar: <br />
+- Buscar apenas pelo nome. Caso busque por número, ele mostra a tela de "Nada encontrado". <br />
+Eu consegui deixar a pesquisar por nome e número, mas não aparecia a tela de não encontrado, então preferi deixar assim.
+ <br />
+✔ Categorizar; <br />
+✔ Favoritar: <br />
+- Essa ação ocorre apenas ao clicar no botão de pesquisa. 

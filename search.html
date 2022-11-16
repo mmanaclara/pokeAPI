@@ -24,7 +24,7 @@
       src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
       defer
     ></script>
-    <script src="main.js" defer></script>
+    <script src="/javascript/search.js" defer></script>
 
     <title>PokéChallenge</title>
   </head>
@@ -38,7 +38,7 @@
         <nav>
           <ul>
             <li>
-              <a href="/">Favoritos</a>
+              <a href="index.html">Favoritos</a>
               <a class="active" href="search.html">Procurar</a>
               <a href="seeAll.html">Ver todos</a>
             </li>
@@ -64,7 +64,7 @@
         <div class="pokeCard">
           <header>
             <img id="pokePic" src="#" alt="" />
-            <button type="button" onclick="saveFavoritePoke()">
+            <button type="button" class="saveBtn">
               <i class="fa-regular fa-heart fa-2xl"></i>
             </button>
           </header>
@@ -75,7 +75,7 @@
             <b id="pokeID">...</b>
           </span>
           <footer id="types">
-            <a href="/" class="typeOfPoke">Elétrico</a>
+            <a href="/" class="typeOfPoke"></a>
           </footer>
 
           <button type="button">Ver detalhes</button>

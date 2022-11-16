@@ -1,7 +1,12 @@
-.home .wrapper {
+.home .astronaut-wrapper {
+  width: min(116.4rem, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
   flex-direction: column;
 }
-.home .wrapper span {
+.home .astronaut-wrapper span {
   color: var(--grey-300);
   font-size: 1.4rem;
   display: block;
@@ -9,7 +14,7 @@
   margin-block: 0.9rem 3.9rem;
   text-align: center;
 }
-.home .wrapper button {
+.home .astronaut-wrapper button {
   background: transparent;
   border: 1px solid var(--grey-300);
   border-radius: 8px;
@@ -19,7 +24,62 @@
   padding: 1.25rem 1.66rem;
   transition: all 0.2s;
 }
-.home .wrapper button:hover {
+.home .astronaut-wrapper button:hover {
   background: var(--grey-300);
   color: var(--white);
+}
+.home .astronaut-wrapper .hide {
+  display: none;
+}
+
+.home .astronaut-wrapper.hide {
+  display: none;
+}
+
+.pokeCard {
+  width: min(116.4rem, 100%);
+  background: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+  flex-direction: column;
+}
+
+.pokemon {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 1.2rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.pokemon img {
+  text-align: center;
+}
+.pokemon button {
+  width: 15rem;
+}
+.pokemon .pokeImg {
+  align-self: center;
+  max-width: 10rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.pokemon .pokeImg img {
+  width: 100%;
+}
+.pokemon .pokeImg button {
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: -20%;
+  left: 30%;
+  color: var(--grey-250);
 }/*# sourceMappingURL=index.css.map */
