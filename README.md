@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Logo para topo do README" src="./logo.png" width="100%">
+  <img alt="Logo para topo do README" src="./logo.png" width="50%">
 </p>
 
 ## 💻 Projeto
