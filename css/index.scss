@@ -1,10 +1,11 @@
-.home .astronaut-wrapper {
+.home .astronautWrapper {
   width: min(116.4rem, 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-inline: auto;
   flex-direction: column;
+  height: calc(100vh - 10rem);
 
   span {
     color: var(--grey-300);
@@ -36,7 +37,7 @@
   }
 }
 
-.home .astronaut-wrapper.hide {
+.home .astronautWrapper.hide {
   display: none;
 }
 
@@ -49,7 +50,7 @@
   justify-content: center;
   align-items: center;
   gap: 2.4rem;
-  flex-direction: column;
+  margin-inline: auto;
 }
 
 .pokemon {
@@ -69,6 +70,10 @@
 
   button {
     width: 15rem;
+  }
+
+  strong {
+    text-transform: capitalize;
   }
 
   .pokeImg {

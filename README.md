@@ -1,5 +1,9 @@
 <p align="center">
-  <img alt="Logo para topo do README" src="./logo.png" width="40%">
+  <img alt="Logo para topo do README" src="./logo.png" width="20%">
+</p>
+
+<p align="center">
+  <img alt="Visualização do site" src="./cover.gif" width="80%">
 </p>
 
 ## 💻 Projeto
@@ -16,8 +20,8 @@ Projeto desenvolvido com HTML, CSS e JavaScript para o processo seletivo da Nova
 ## 🚧 Requisitos
 
 ✔ Filtrar: <br />
-Buscar apenas pelo nome. Caso busque por número, ele mostra a tela de "Nada encontrado". <br />
-Eu consegui deixar a pesquisar por nome e número, mas não aparecia a tela de não encontrado, então preferi deixar assim.<br />
+. Buscar apenas pelo nome. Caso busque por número, ele mostra a tela de "Nada encontrado". <br />
+. Eu consegui deixar pesquisar por nome e número, mas não aparecia a tela de não encontrado, então preferi deixar assim.<br />
 ✔ Categorizar; <br />
 ✔ Favoritar: <br />
-Essa ação ocorre apenas ao clicar no botão de pesquisa. 
+. Essa ação ocorre apenas ao clicar no botão de pesquisa. 

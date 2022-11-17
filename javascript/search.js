@@ -48,7 +48,7 @@ async function getPoke(pokemon) {
       pokePic.src = data.sprites.front_default;
       typeOfPoke.innerHTML = data.types.map((el) => el.type.name)[0];
 
-      if (data) { //Adicionar || pokemon === data.id não funcionou como eu esperava, pois não aparecia a tela de não encontrado
+      if (pokemon === data.name) { //Adicionar || pokemon === data.id não funcionou como eu esperava, pois não aparecia a tela de não encontrado
         pokeCard.classList.add("show");
         bgImg.classList.add("hide");
         astronaut.classList.remove("show")

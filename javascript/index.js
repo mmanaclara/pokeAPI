@@ -1,5 +1,5 @@
 const pokeCard = document.querySelector(".pokeCard");
-const emptyStorageScreen = document.querySelector(".astronaut-wrapper");
+const emptyStorageScreen = document.querySelector(".astronautWrapper");
 let storageCount = document.querySelector(".storageCount");
 
 function goToSearchPage() {
@@ -12,10 +12,14 @@ async function getStoragePoke() {
   const parsePoke = JSON.parse(pokeInfos);
 
   if (parsePoke) {
-    createPokeCard(parsePoke);
     emptyStorageScreen.classList.add("hide");
     let savedCount = parsePoke.length;
 
+    // ITERAÇÃO DOS FAVORITOS
+
+    for (var i in parsePoke) {
+      createPokeCard(parsePoke[i]);
+    }
     storageCount.insertAdjacentHTML(
       "beforeend",
       " " + "<span>" + savedCount + "</span>"
@@ -30,10 +34,12 @@ function createPokeCard(parsePoke) {
   const pokeElement = document.createElement("div");
   pokeElement.classList.add("pokemon");
 
-  const name = parsePoke.map((el) => el.name);
-  const id = parsePoke.map((el) => el.id);
-  const pic = parsePoke.map((el) => el.pic);
-  const type = parsePoke.map((el) => el.type);
+  console.log(parsePoke);
+
+  const name = parsePoke.name;
+  const id = parsePoke.id;
+  const pic = parsePoke.pic;
+  const type = parsePoke.type;
 
   const pokeInnerHTML = `
           <div class="pokeImg">
@@ -58,8 +64,8 @@ function createPokeCard(parsePoke) {
 
   pokeCard.appendChild(pokeElement);
 
-  pokeElement.insertAdjacentHTML(
-    "beforebegin",
-    "<h3>" + "Olá, você tem " + parsePoke.length + " pokémon salvo!" + "</h3>"
-  );
+  // pokeElement.insertAdjacentHTML(
+  //   "beforebegin",
+  //   "<h3>" + "Olá, você tem " + parsePoke.length + " pokémon salvo!" + "</h3>"
+  // );
 }

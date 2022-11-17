@@ -1,12 +1,13 @@
-.home .astronaut-wrapper {
+.home .astronautWrapper {
   width: min(116.4rem, 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-inline: auto;
   flex-direction: column;
+  height: calc(100vh - 10rem);
 }
-.home .astronaut-wrapper span {
+.home .astronautWrapper span {
   color: var(--grey-300);
   font-size: 1.4rem;
   display: block;
@@ -14,7 +15,7 @@
   margin-block: 0.9rem 3.9rem;
   text-align: center;
 }
-.home .astronaut-wrapper button {
+.home .astronautWrapper button {
   background: transparent;
   border: 1px solid var(--grey-300);
   border-radius: 8px;
@@ -24,15 +25,15 @@
   padding: 1.25rem 1.66rem;
   transition: all 0.2s;
 }
-.home .astronaut-wrapper button:hover {
+.home .astronautWrapper button:hover {
   background: var(--grey-300);
   color: var(--white);
 }
-.home .astronaut-wrapper .hide {
+.home .astronautWrapper .hide {
   display: none;
 }
 
-.home .astronaut-wrapper.hide {
+.home .astronautWrapper.hide {
   display: none;
 }
 
@@ -44,7 +45,7 @@
   justify-content: center;
   align-items: center;
   gap: 2.4rem;
-  flex-direction: column;
+  margin-inline: auto;
 }
 
 .pokemon {
@@ -64,6 +65,9 @@
 }
 .pokemon button {
   width: 15rem;
+}
+.pokemon strong {
+  text-transform: capitalize;
 }
 .pokemon .pokeImg {
   align-self: center;

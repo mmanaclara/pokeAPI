@@ -2,6 +2,7 @@ const pokeCard = document.querySelector(".pokeCard");
 const pokeCount = 150;
 const categoryTtle = document.querySelector(".categoryTitle");
 const allCategoryPokes = document.querySelectorAll(".all");
+const allPoke = document.querySelector('.allPoke')
 
 const colors = {
   normal: "#A8A878",
@@ -102,6 +103,7 @@ function filterPoke(value){
 
     if (value == "all") {
       element.classList.remove("hide");
+      allPoke.classList.add('active')
     } else {
       if (element.classList.contains(value)) {
         element.classList.remove("hide");

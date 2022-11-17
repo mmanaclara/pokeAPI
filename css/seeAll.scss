@@ -15,13 +15,16 @@
       background: transparent;
       font-size: 1.4rem;
     }
+
+    .button-value.active {
+      background: var(--primary);
+      color: var(--grey-500);
+      border-color: var(--primary);
+    }
   }
 }
 
-.active {
-  background: #FFCB05;
-  color: var(--grey-500);
-}
+
 
 .pokeCard {
   width: min(116.4rem, 100%);
