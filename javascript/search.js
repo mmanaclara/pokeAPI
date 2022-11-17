@@ -75,10 +75,6 @@ function saveFavoritePoke(data) {
   let pic = data.sprites.front_default
   let type = data.types.map((el) => el.type.name)[0]
 
-  console.log(name)
-  console.log(id)
-  console.log(JSON.stringify(type))
-
   let pokeInfos = new Array()
 
   if(localStorage.hasOwnProperty("pokeInfos")) {

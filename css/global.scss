@@ -39,6 +39,10 @@
   nav {
     margin-inline: auto;
   }
+
+  :focus {
+    border: none; 
+  }
   
   ul {
     list-style: none;
